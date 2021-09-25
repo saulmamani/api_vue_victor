@@ -1,15 +1,15 @@
 <template>
 <div>
-  <hr>
+  <v-divider/>
 
   <div class="derecha" v-if="esPrincial === false">
-    <button @click="salir">Salir</button>
+    <v-btn small color="primary" class="mt-2" @click="salir">Salir</v-btn>
   </div>
 
   <h1>{{ titulo }}</h1>
   <h4 style="margin: -20px">{{ subTitulo }}</h4>
   <br>
-  <hr>
+  <v-divider/>
 </div>
 </template>
 

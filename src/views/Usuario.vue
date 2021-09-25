@@ -6,12 +6,12 @@
         :es-princial="false"
     />
 
-    <p class="derecha">
-      <button>+ Nuevo</button>
+    <p class="derecha mt-5">
+      <v-btn color="secundary">+ Nuevo</v-btn>
     </p>
 
     <p style="text-align: left">
-      <input type="text"/>
+      <v-text-field outlined label="Buscar: "></v-text-field>
     </p>
 
   </div>
