@@ -74,6 +74,7 @@ export default {
       {title: 'Home', icon: 'mdi-view-dashboard', to: '/'},
       {title: 'About', icon: 'mdi-image', to: '/about'},
       {title: 'Usuario', icon: 'mdi-help-box', to: '/usuarios'},
+      {title: 'Choferes', icon: 'mdi-help-box', to: '/choferes'},
     ],
   }),
 };
