@@ -60,6 +60,7 @@
 <script>
 import {mapGetters} from "vuex";
 import CchoferesDialog from "@/components/choferes/CchoferesDialog";
+import {Alert} from "@/addons/Alert";
 
 export default {
   name: "CchoferesTable",
@@ -115,18 +116,19 @@ export default {
       this.chofer = reg;
     },
     eliminar(id) {
-      if(confirm("Seguro que quiere eliminar el registro")){
 
-        //DELETE  https://sifoli.herokuapp.com/api/choferes/38   -> 38 es el id del chofer
-        let url = `${this.url}choferes/${id}`; //this.url + 'choferes/' + id
-        this.axios.delete(url).then(response => {
-          if(response.data.success === true){
-            alert(response.data.message)
-            this.getChoferes();
-          }
-        })
-
-      }
+      Alert.confirm("Se va a eliminar un registro").then(response => {
+        if(response.isConfirmed){
+            //DELETE  https://sifoli.herokuapp.com/api/choferes/38   -> 38 es el id del chofer
+            let url = `${this.url}choferes/${id}`; //this.url + 'choferes/' + id
+            this.axios.delete(url).then(response => {
+              if(response.data.success === true){
+                Alert.ok(response.data.message)
+                this.getChoferes();
+              }
+            });
+        }
+      });
     }
   }
 }
